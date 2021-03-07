@@ -1,0 +1,187 @@
+{% extends "admin/layout.html" %} {% block content %}
+<div class="page-header page-header-default" id="page-header">
+
+    <div class="breadcrumb-line bg-hejo">
+      <ul class="breadcrumb">
+        <li><a href="index.html"><i class="icon-home2 position-left"></i> Home</a></li>
+        <li class="active">Form Management User</li>
+      </ul>
+  
+      <ul class="breadcrumb-elements">
+        <li><a href="#"><i class="icon-comment-discussion position-left"></i> Support</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+            <i class="icon-gear position-left"></i>
+            Settings
+            <span class="caret"></span>
+          </a>
+  
+          <ul class="dropdown-menu dropdown-menu-right">
+            <li><a href="#"><i class="icon-user-lock"></i> Account security</a></li>
+            <li><a href="#"><i class="icon-statistics"></i> Analytics</a></li>
+            <li><a href="#"><i class="icon-accessibility"></i> Accessibility</a></li>
+            <li class="divider"></li>
+            <li><a href="#"><i class="icon-gear"></i> All settings</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="content">
+    <div class="panel panel-flat">
+      <div class="panel-heading bg-koneng">
+        <h5 class="panel-title">Form Management User</h5>
+        <div class="heading-elements">
+          <ul class="icons-list">
+                    <li><a data-action="collapse"></a></li>
+                    <li><a data-action="reload"></a></li>
+                    <li><a data-action="close"></a></li>
+                  </ul>
+                </div>
+      </div>
+
+      <div class="panel-body">
+        <form class="form-horizontal" action="#" id="myForm" method="post" role="form">
+            <input type="hidden" name="id" id="id" value="{{data.id}}">
+            <fieldset class="content-group">
+                <div class="form-group">
+                    <label class="control-label col-lg-2">Kota / Kabupaten</label>
+                    <div class="col-lg-10">
+                        <select class="form-control" name="kotaKab" id="kotaKab" value="{{data.kotaKab}}">
+                            <option value="">--- Pilih ---</option>
+                            {% for kotaKab in kotaKab %}
+                            <option value="{{kotaKab.nama}}" {% if data.kotaKab == kotaKab.nama %} selected="" {% endif %}>{{kotaKab.nama}}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-lg-2">Username</label>
+                    <div class="col-lg-10">
+                        <input type="text" class="form-control" name="username" id="username" value="{{data.username}}">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-lg-2">Password</label>
+                    <div class="col-lg-10">
+                        <input type="password" class="form-control" name="password" id="password" value="{{data.password}}">
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+    <div class="panel-footer">
+        <div class="heading-elements">
+            <div class="heading-btn pull-right">
+                <button type="button" id="btnSave" onclick="saveData()" class="btn btn-success">Simpan</button>
+                <button type="button" id="btnUpdate" onclick="updateData()" class="btn btn-primary">Update</button>
+            </div>
+        </div>
+    </div>
+    </div>
+</div>  
+
+
+{% endblock %}
+{% block js %}
+<script>
+$(document).ready(function() {
+        $('#btnUpdate').hide();
+        $('#btnSave').show();
+
+        var nip = document.getElementById('id').value;
+        if(nip != "")
+        {
+            $('#btnUpdate').show();
+            $('#btnSave').hide();
+        }
+    
+    });  
+
+    function saveData()
+    {
+        $("#notif").empty();
+        $('#btnSave').text('Saving...'); //change button text
+        $('#btnSave').attr('disabled',true); //set button disable 
+        var status = true;
+        var url = "{{ base_url }}saveUser";
+
+        var formData = new FormData($('#myForm')[0]);
+    
+        if (status==true) {
+            // ajax adding data to database
+            $.ajax({
+                  url : url,
+                  type: "POST",
+                  data: $('#myForm').serialize(),
+                  dataType: "JSON",
+                success: function(data)
+                {
+                    notif('success', 'SUKSES! Data berhasil disimpan'); 
+                    window.location = "{{ base_url }}listUser";
+                    
+                  
+                    $('#btnSave').text('Loading..'); //change button text
+                    $('#btnSave').attr('disabled',false); //set button enable 
+                },
+                error: function (jqXHR, textStatus, errorThrown)
+                {
+                    notif('warning', 'PERHATIAN! Data Gagal Disimpan');
+                    $('#btnSave').text('Simpan'); //change button text
+                    $('#btnSave').attr('disabled',false); //set button enable 
+
+                }
+            });
+        }
+        else
+        {
+            $('#btnSave').text('Simpan'); //change button text
+            $('#btnSave').attr('disabled',false); //set button enable 
+        }
+        
+    }
+
+    function updateData()
+    {
+        $("#notif").empty();
+        $('#btnUpdate').text('Updating...'); //change button text
+        $('#btnUpdate').attr('disabled',true); //set button disable 
+        var status = true;
+        var url = "{{ base_url }}updateUser";
+        
+        if (status==true) {
+            // ajax adding data to database
+            $.ajax({
+                  url : url,
+                  type: "POST",
+                  data: $('#myForm').serialize(),
+                  dataType: "JSON",
+                success: function(data)
+                {
+                    notif('success', 'SUKSES! Data berhasil disimpan'); 
+                    window.location = "{{ base_url }}listUser";
+                  
+                    $('#btnUpdate').text('Loading..'); //change button text
+                    $('#btnUpdate').attr('disabled',false); //set button enable 
+                },
+                error: function (jqXHR, textStatus, errorThrown)
+                {
+                    notif('warning', 'PERHATIAN! Data Gagal Diedit');
+                    $('#btnUpdate').text('Update'); //change button text
+                    $('#btnUpdate').attr('disabled',false); //set button enable 
+
+                }
+            });
+        }
+        else
+        {
+            $('#btnUpdate').text('Update'); //change button text
+            $('#btnUpdate').attr('disabled',false); //set button enable 
+        }
+        
+    }
+
+    
+</script>
+    {% endblock %}

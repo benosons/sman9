@@ -1,0 +1,61 @@
+{% extends "admin/layout.html" %} {% block content %}
+<div class="app-main__inner">
+		<div class="app-page-title">
+				<div class="page-title-wrapper">
+						<div class="page-title-heading">
+								<div class="page-title-icon">
+										<i class="pe-7s-graph3 icon-gradient bg-tempting-azure"></i>
+								</div>
+								<div>List Data KALIBRASI
+										<div class="page-title-subheading">Choose between regular React Bootstrap tables or advanced dynamic ones.</div>
+								</div>
+						</div>
+						<div class="page-title-actions">
+								<button type="button" data-toggle="tooltip" title="Example Tooltip" data-placement="bottom"
+										class="btn-shadow mr-3 btn btn-dark">
+										<i class="fa fa-star"></i>
+								</button>
+								<div class="d-inline-block dropdown">
+										<button type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="btn-shadow dropdown-toggle btn btn-info">
+												<span class="btn-icon-wrapper pr-2 opacity-7">
+														<i class="fa fa-business-time fa-w-20"></i>
+												</span>
+												Tambah
+										</button>
+										<div tabindex="-1" role="menu" aria-hidden="true" class="dropdown-menu dropdown-menu-right">
+												<ul class="nav flex-column">
+														<li class="nav-item">
+																<a class="nav-link" data-toggle="modal" data-target="#modalkalib-alatukur">
+																		<i class="nav-link-icon lnr-inbox"></i>
+																		<span> Pemilik Alat Ukur</span>
+																</a>
+														</li>
+												</ul>
+										</div>
+								</div>
+						</div>
+					</div>
+		</div>
+		<button hidden id="modal-kalib" type="button" data-toggle="modal" data-target="#modalkalibrasi" class="btn-shadow dropdown-toggle btn btn-info">Tambah</button>
+		<div class="main-card mb-3 card">
+				<div class="card-body">
+						<table style="width: 100%;" id="list-kalibrasi" class="table table-hover table-striped table-bordered">
+								<thead>
+								<tr>
+										<th>NO</th>
+										<th>NAMA PEMILIK ALAT UKUR</th>
+										<th>TRACKGAUGE</th>
+										<th>BACK TO BACK</th>
+										<th>VERNIER CALIPPER</th>
+										<th>DITERIMA</th>
+										<th>DITOLAK</th>
+										<th>TOTAL</th>
+										<th>ACTION</th>
+								</tr>
+								</thead>
+						</table>
+				</div>
+		</div>
+
+</div>
+{% endblock %}

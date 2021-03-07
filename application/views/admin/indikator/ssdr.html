@@ -1,0 +1,69 @@
+{% extends "admin/layout.html" %} {% block content %}
+<input type="hidden" id="page" value="{{page}}">
+<div class="app-main__inner">
+		<div class="app-page-title">
+				<div class="page-title-wrapper">
+						<div class="page-title-heading">
+								<div class="page-title-icon">
+										<i class="pe-7s-medal icon-gradient bg-tempting-azure"></i>
+								</div>
+								<div>List Data Indikator SSDR
+										<div class="page-title-subheading">Choose between regular React Bootstrap tables or advanced dynamic ones.</div>
+								</div>
+						</div>
+						<div class="page-title-actions">
+
+								<div class="d-inline-block dropdown">
+										<button type="button" data-toggle="modal" data-target="#modalssdr" class="btn-shadow dropdown-toggle btn btn-info">
+												<span class="btn-icon-wrapper pr-2 opacity-7">
+														<i class="fa fa-business-time fa-w-20"></i>
+												</span>
+												Tambah
+										</button>
+
+								</div>
+						</div>    </div>
+		</div>            <div class="main-card mb-3 card">
+				<div class="card-body">
+						<table style="width: 100%;" id="list-ssdr" class="table table-hover table-striped table-bordered">
+								<thead>
+								<tr>
+										<th>NO</th>
+										<th>INDIKATOR SSD</th>
+										<th>INDIKATOR SSDI</th>
+										<th>KETERANGAN</th>
+										<th>SATUAN</th>
+										<th>FORMULA</th>
+										<th>PRIORITAS</th>
+										<th>TARGET</th>
+										<th>PENCAPAIAN SM I</th>
+										<th>PENCAPAIAN SM II</th>
+										<th>REALISASI</th>
+								</tr>
+								</thead>
+								<tbody>
+								<tr>
+										<td>Colleen Hurst</td>
+										<td>Javascript Developer</td>
+										<td>San Francisco</td>
+										<td>39</td>
+										<td>2009/09/15</td>
+										<td>$205,500</td>
+										<td>$205,500</td>
+								</tr>
+								<tr>
+										<td>Sonya Frost</td>
+										<td>Software Engineer</td>
+										<td>Edinburgh</td>
+										<td>23</td>
+										<td>2008/12/13</td>
+										<td>$103,600</td>
+										<td>$103,600</td>
+								</tr>
+								</tbody>
+						</table>
+				</div>
+		</div>
+
+</div>
+{% endblock %}

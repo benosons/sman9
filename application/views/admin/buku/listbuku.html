@@ -1,0 +1,247 @@
+{% extends "admin/layout.html" %} {% block content %}
+<div class="app-main__inner">
+		<div class="app-page-title">
+				<div class="page-title-wrapper">
+						<div class="page-title-heading">
+								<div class="page-title-icon">
+										<i class="pe-7s-notebook icon-gradient bg-tempting-azure"></i>
+								</div>
+								<div>List Data Buku
+										<div class="page-title-subheading">Choose between regular React Bootstrap tables or advanced dynamic ones.</div>
+								</div>
+						</div>
+						<div class="page-title-actions">
+								<button type="button" data-toggle="tooltip" title="Example Tooltip" data-placement="bottom"
+										class="btn-shadow mr-3 btn btn-dark">
+										<i class="fa fa-star"></i>
+								</button>
+								<div class="d-inline-block dropdown">
+										<button type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="btn-shadow dropdown-toggle btn btn-info">
+												<span class="btn-icon-wrapper pr-2 opacity-7">
+														<i class="fa fa-business-time fa-w-20"></i>
+												</span>
+												Buttons
+										</button>
+										<div tabindex="-1" role="menu" aria-hidden="true" class="dropdown-menu dropdown-menu-right">
+												<ul class="nav flex-column">
+														<li class="nav-item">
+																<a class="nav-link">
+																		<i class="nav-link-icon lnr-inbox"></i>
+																		<span> Inbox</span>
+																		<div class="ml-auto badge badge-pill badge-secondary">86</div>
+																</a>
+														</li>
+														<li class="nav-item">
+																<a class="nav-link">
+																		<i class="nav-link-icon lnr-book"></i>
+																		<span> Book</span>
+																		<div class="ml-auto badge badge-pill badge-danger">5</div>
+																</a>
+														</li>
+														<li class="nav-item">
+																<a class="nav-link">
+																		<i class="nav-link-icon lnr-picture"></i>
+																		<span> Picture</span>
+																</a>
+														</li>
+														<li class="nav-item">
+																<a disabled class="nav-link disabled">
+																		<i class="nav-link-icon lnr-file-empty"></i>
+																		<span> File Disabled</span>
+																</a>
+														</li>
+												</ul>
+										</div>
+								</div>
+						</div>    </div>
+		</div>
+		<div class="row">
+			<div class="col-md-6">
+				<div class="main-card mb-3 card">
+					<div class="card-body">
+							<div class="position-relative form-group">
+								<div class="row">
+									<div class="col-md-4">
+										<label for="exampleEmail" class="">No. Induk</label>
+									</div>
+									<div class="col-md-8">
+										<input name="text" id="exampleEmail" placeholder="" type="email" class="form-control" value="375">
+									</div>
+								</div>
+							</div>
+							<div class="position-relative form-group">
+								<div class="row">
+									<div class="col-md-4">
+										<label for="exampleEmail" class="">No. Klasifikasi</label>
+									</div>
+									<div class="col-md-8">
+										<input name="text" id="exampleEmail" placeholder="" type="email" class="form-control" value="203.1. NOR.S">
+									</div>
+								</div>
+							</div>
+							<div class="position-relative form-group">
+								<div class="row">
+									<div class="col-md-4">
+										<label for="exampleEmail" class="">Judul</label>
+									</div>
+									<div class="col-md-8">
+										<input name="text" id="exampleEmail" placeholder="" type="email" class="form-control" value="KIMIA">
+									</div>
+								</div>
+							</div>
+							<div class="position-relative form-group">
+								<div class="row">
+									<div class="col-md-4">
+										<label for="exampleEmail" class="">Penulis</label>
+									</div>
+									<div class="col-md-8">
+										<input name="text" id="exampleEmail" placeholder="" type="email" class="form-control" value="T. Ibrahim & H. Darsono">
+									</div>
+								</div>
+							</div>
+							<div class="position-relative form-group">
+								<div class="row">
+									<div class="col-md-4">
+										<label for="exampleEmail" class="">Penerbit</label>
+									</div>
+									<div class="col-md-8">
+										<input name="text" id="exampleEmail" placeholder="" type="email" class="form-control" value="Erlangga">
+									</div>
+								</div>
+							</div>
+							<div class="position-relative form-group">
+								<div class="row">
+									<div class="col-md-4">
+										<label for="exampleEmail" class="">Tahun Terbit</label>
+									</div>
+									<div class="col-md-8">
+										<input name="text" id="exampleEmail" placeholder="" type="email" class="form-control" value="2017">
+									</div>
+								</div>
+							</div>
+							<div class="position-relative form-group">
+								<div class="row">
+									<div class="col-md-4">
+										<label for="exampleSelect" class="">Kelas</label>
+									</div>
+									<div class="col-md-8">
+										<select name="select" id="exampleSelect" class="form-control">
+											<option>-Pilih-</option>
+											<option selected>X</option>
+											<option>XI</option>
+											<option>XII</option>
+										</select>
+									</div>
+								</div>
+							</div>
+							<div class="position-relative form-group">
+								<div class="row">
+									<div class="col-md-4">
+										<label for="exampleEmail" class="">Sumber</label>
+									</div>
+									<div class="col-md-8">
+										<input name="text" id="exampleEmail" placeholder="" type="email" class="form-control" value="BOS 2020">
+									</div>
+								</div>
+							</div>
+							<div class="position-relative form-group">
+								<div class="row">
+									<div class="col-md-4">
+										<label for="exampleEmail" class="">Harga</label>
+									</div>
+									<div class="col-md-8">
+										<input name="text" id="exampleEmail" placeholder="" type="email" class="form-control" value="45.000">
+									</div>
+								</div>
+							</div>
+							<hr/>
+							<div class="input-group">
+								<div class="input-group-prepend">
+									<button class="btn btn-primary"><i class="pe-7s-search"></i> Cari</button>
+								</div>
+								<input type="text" class="form-control" placeholder="Masukan No Induk Buku">
+							</div>
+							<hr/>
+							<div class="row">
+								<div class="col-md-4">
+									<button class="mb-2 mr-2 btn-hover-shine btn btn-primary btn-block"><i class="fas fa-plus"></i> Tambah</button>
+								</div>
+								<div class="col-md-4">
+									<button class="mb-2 mr-2 btn-hover-shine btn btn-primary btn-block"><i class="fas fa-trash"></i> Hapus</button>
+								</div>
+								<div class="col-md-4">
+									<button class="mb-2 mr-2 btn-hover-shine btn btn-primary btn-block"><i class="fas fa-edit"></i> Ubah</button>
+								</div>
+							</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="main-card mb-3 card">
+					<div class="card-body">
+						<img src="https://cdn.eurekabookhouse.co.id/ebh/product/all/ebh-erlangga-fokus-un-2020-smp-mts.jpg">
+						<hr/>
+							<div class="row">
+								<div class="col-md-4">
+									<button class="mb-2 mr-2 btn-hover-shine btn btn-primary btn-block"><i class="fas fa-book"></i> Foto</button>
+								</div>
+							</div>
+					</div>
+				</div>
+			</div>
+		</div>           
+		
+		<div class="main-card mb-3 card">
+				<div class="card-body">
+						<table style="width: 100%;" id="example" class="table table-hover table-striped table-bordered">
+								<thead>
+								<tr>
+										<th>No. Induk</th>
+										<th>No. klasifikasi</th>
+										<th>Judul</th>
+										<th>Penulis</th>
+										<th>Penerbit</th>
+										<th>Tahun Terbit</th>
+										<th>Kelas</th>
+										<th>Sumber</th>
+										<th>Harga</th>
+										<th>Jumlah Awal</th>
+										<th>Keterangan</th>
+								</tr>
+								</thead>
+								<tbody>
+								<tr>
+										<td>361</td>
+										<td>297.1. DAR.P</td>
+										<td>FISIKA</td>
+										<td>Kangen</td>
+										<td>Erlangga</td>
+										<td>2017</td>
+										<td>X</td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+								</tr>
+								<tr>
+										<td>375</td>
+										<td>203.1. NOR.S</td>
+										<td>KIMIA</td>
+										<td>T. Ibrahim & H. Darsono</td>
+										<td>Erlangga</td>
+										<td>2017</td>
+										<td>XI</td>
+										<td>BOS 2020</td>
+										<td>45000</td>
+										<td>100</td>
+										<td></td>
+								</tr>
+								</tbody>
+								
+						</table>
+				</div>
+		</div>
+
+</div>
+<!-- <script type="text/javascript" src="{{base_url}}assets/js/action/data/listdata.js"></script> -->
+{% endblock %}

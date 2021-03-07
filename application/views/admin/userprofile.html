@@ -1,0 +1,169 @@
+{% extends "admin/layout.html" %} {% block content %}
+  <!-- Content Header (Page header) -->
+  <input id="role" value="{{role}}" hidden>
+  <input id="id_user" value="{{id}}" hidden>
+  <input id="param" value="" hidden>
+  <section class="content-header">
+    <div class="container-fluid">
+      <div class="row mb-2">
+        <div class="col-sm-6">
+          <h1>User Profile</h1>
+        </div>
+        <div class="col-sm-6">
+          <ol class="breadcrumb float-sm-right">
+            <li class="breadcrumb-item"><a href="#">User</a></li>
+            <li class="breadcrumb-item active">User Profile</li>
+          </ol>
+        </div>
+      </div>
+    </div><!-- /.container-fluid -->
+  </section>
+
+  <!-- Main content -->
+  <section class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-3">
+
+            <!-- About Me Box -->
+            <div class="card card-primary">
+              <div class="card-header">
+                <h3 class="card-title">Profile</h3>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body">
+                <div class="text-center">
+                  <img id="blah" class="profile-user-img img-fluid img-circle"
+                       src="{{foto}}"
+                       alt="User profile picture">
+                </div>
+
+                <h3 class="profile-username text-center">{{name}}</h3>
+
+                <p class="text-muted text-center" ></p>
+                <strong><i class="fas fa-book mr-1"></i> Kategori</strong>
+
+                <p class="text-muted" id="kategori"></p>
+
+                <hr>
+
+                <strong><i class="fas fa-phone-alt mr-1"></i> Nomor Telpon</strong>
+
+                <p class="text-muted" name="notelp"></p>
+
+                <hr>
+
+                <strong><i class="fas fa-envelope mr-1"></i> Email</strong>
+
+                <p class="text-muted" name="email"></p>
+              </div>
+              <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+          </div>
+          <!-- /.col -->
+          <div class="col-md-9">
+            <div class="card">
+              <div class="card-header p-2">
+                <ul class="nav nav-pills">
+                  <li class="nav-item"><a class="nav-link active" href="#settings" data-toggle="tab">Settings</a></li>
+                </ul>
+              </div><!-- /.card-header -->
+              <div class="card-body">
+                <div class="tab-content">
+
+                  <div class="tab-pane active" id="settings">
+                    <div class="form-group row">
+                        <div class="col-md-6">
+                          <div class="custom-file" style="margin-bottom: 10px;margin-top: 10px;">
+                            <input type="file" class="custom-file-input" id="foto-user" name="user-input">
+                            <label class="custom-file-label" for="foto-user">Pilih foto</label>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="text-center">
+                              <canvas hidden id="myCanvas"/>
+                          </div>
+                        </div>
+                    </div>
+                      <div class="form-group row">
+                        <label for="inputName" class="col-sm-2 col-form-label">Nama</label>
+                        <div class="col-sm-10">
+                          <input type="text" class="form-control" id="name" placeholder="">
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label for="inputName" class="col-sm-2 col-form-label">Username</label>
+                        <div class="col-sm-10">
+                          <input type="email" class="form-control" id="username" placeholder="">
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label for="inputEmail" class="col-sm-2 col-form-label">Kota/ Kabupaten</label>
+                        <div class="col-sm-10">
+                          <select id="kota_kab" class="form-control select2" style="width: 100%;"></select>
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label for="inputName2" class="col-sm-2 col-form-label">Nomor Telepon</label>
+                        <div class="col-sm-10">
+                          <input type="text" class="form-control" id="notelp" placeholder="">
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label for="inputName2" class="col-sm-2 col-form-label">Email</label>
+                        <div class="col-sm-10">
+                          <input type="text" class="form-control" id="email" placeholder="" >
+                        </div>
+                      </div>
+
+                      <div class="form-group row">
+                        <div class="offset-sm-2 col-sm-10">
+                          <div class="custom-control custom-checkbox">
+                          <input class="custom-control-input" type="checkbox" id="ubah-password">
+                          <label for="ubah-password" class="custom-control-label">Ubah Password</label>
+                        </div>
+                        </div>
+                      </div>
+                      <div class="form-group row" name="form-pass">
+                        <label for="inputName2" class="col-sm-2 col-form-label">Password Lama</label>
+                        <div class="col-sm-10">
+                          <input type="password" class="form-control" id="pass-lama" placeholder="" >
+                        </div>
+                      </div>
+                      <div class="form-group row" name="form-pass">
+                        <label for="inputName2" class="col-sm-2 col-form-label">Password Baru</label>
+                        <div class="col-sm-10">
+                          <input type="text" class="form-control" id="pass-baru" placeholder="" >
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <div class="offset-sm-2 col-sm-10">
+                          <button type="submit" class="btn btn-danger" id="simpan-perubahan">simpan perubahan</button>
+                        </div>
+                      </div>
+                  </div>
+                  <!-- /.tab-pane -->
+                </div>
+                <!-- /.tab-content -->
+              </div><!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+          </div>
+          <!-- /.col -->
+        </div>
+        <!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </section>
+  <!-- /.content -->
+
+{% endblock %}
+{% block js %}
+<script>
+$(function () {
+  bsCustomFileInput.init();
+});
+</script>
+<script type="text/javascript" src="{{base_url}}assets/js/action/user/profile.js"></script>
+<script type="text/javascript" src="{{base_url}}assets/lte/plugins/bs-custom-file-input/bs-custom-file-input.min.js"></script>
+{% endblock %}
